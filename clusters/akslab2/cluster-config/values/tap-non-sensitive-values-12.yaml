@@ -112,10 +112,10 @@ tap_install:
               subPath: clusters/akslab2/cluster-config/namespaces/namespace-resources
               url: https://github.com/tfynes-pivotal/tap-gitops2
             path: _ytt_lib/namespace-resources
-          import_data_values_secrets:
-           - name: my-dockerhub-credentials
-             namespace: tap-install
-             create_export: true
+        #!  import_data_values_secrets:
+        #!   - name: my-dockerhub-credentials
+        #!     namespace: tap-install
+        #!     create_export: true
         #! package_overlays:
         #! - name: tap-gui
         #!   secrets:
