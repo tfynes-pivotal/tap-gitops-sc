@@ -1,0 +1,7 @@
+#@data/values
+---
+namespaces:
+- name: default
+- name: dev
+- name: dev2
+- name: dev3
