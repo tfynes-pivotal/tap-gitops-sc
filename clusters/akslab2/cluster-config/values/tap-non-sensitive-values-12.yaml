@@ -117,6 +117,6 @@ tap_install:
              namespace: tap-install
              create_export: true
         package_overlays:
-        - name: tap-gui
-          secrets:
-          - name: cm-tap-gui-sa-overlay
+        # - name: tap-gui
+        #   secrets:
+        #   - name: cm-tap-gui-sa-overlay
