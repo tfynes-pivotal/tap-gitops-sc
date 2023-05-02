@@ -1,0 +1,44 @@
+tap_install:
+    sensitive_values:
+        shared:
+            image_registry:
+                project_path: ENC[AES256_GCM,data:mcLpP4z3C8O8BImB1qezoRWPpsw=,iv:Pw0iytITYfj8N0UvJkNyYHbzUb9eeeIr6kLCB0Pi5bs=,tag:DB0tP7aMWyWSb8FKgM94gA==,type:str]
+                username: ENC[AES256_GCM,data:w6SUPe2U,iv:rp4Wog3REL2kXgk2+nwgqn3Nxe2ZGdZiXWej6+e4iN0=,tag:v0eD3zoZKmQ2KmZAtHeheQ==,type:str]
+                password: ENC[AES256_GCM,data:N47EoMSx1GzwfN/zwIVaMUTNC+jNDIG5Dj5pvQnvqkilzhhH,iv:aWMgnLocoSR+lr3HgnO7E8Q9BjOgZvSm9u7pcCaJVC0=,tag:QA1ZI/Uv6h9FlLDlJh/P0Q==,type:str]
+        buildservice:
+            kp_default_repository: ENC[AES256_GCM,data:KB9Y/HxevDJbGulrHstL7bDFLVI=,iv:zwtSe6J0VRHtQfCGtU4JceYoqkDGSXhQdjSsy/45LYQ=,tag:IVU0NnEj27SbSusgVVxXDg==,type:str]
+            kp_default_repository_username: ENC[AES256_GCM,data:GgBxcHjj,iv:aKDiirtl4OT47gAGynLAim17jo21X2HZLA88jjG5Y/Y=,tag:jBj+uByuKQ3v/JevC2ePxw==,type:str]
+            kp_default_repository_password: ENC[AES256_GCM,data:J9waOJjcWZUG9XjyhixR8Li7JiA5Z2brQhh5Fb+lmMde/kuq,iv:cLakkpgRVFqYjoweICleXJKjJ/VxndziGB9fgGlyoa0=,tag:qhmutwOoXxwYSGhWxJWRsQ==,type:str]
+        learningcenter:
+            imageRegistry:
+                host: ENC[AES256_GCM,data:SCgUcjh8v7ltcQgc+guavenw,iv:QzQVQZVu0a8SVwoIQHyGH/XK7rg0YiL6hbPPKcI9SkI=,tag:pbfN+nNtqFKCSYYNTfY9Xg==,type:str]
+                username: ENC[AES256_GCM,data:b8z2jK7J,iv:9iWpzlsBfyc8R8zBxIrOrjJINiGdFzlzfp11zPnEIgI=,tag:R3GtS6GfCksdnuD/oNjzIw==,type:str]
+                password: ENC[AES256_GCM,data:IFBhP+jwoZXz5S7TrjQemMQXm1RfQcsguuKRocuvSsbT2P1v,iv:CxHXuYlmRZEvBd74XVUg32ngf87EZ0+CXI44PIDkqxI=,tag:MKzNinGPBQ8kbaQXeHcTdw==,type:str]
+        tap_gui:
+            app_config:
+                auth:
+                    providers:
+                        github:
+                            development:
+                                clientId: ENC[AES256_GCM,data:iAisz/yVX1xdaTUFzTxbePynaPE=,iv:LfdeBn/LopTPLldwQY62fkfWrZRIxI9rmPQtc3l6t3g=,tag:kR+UYnKgpFNGTnVNk60FHg==,type:str]
+                                clientSecret: ENC[AES256_GCM,data:+8yfKfFpVxu30UM5uiIhk3f8x73Kpt1Cbd3YsfeyfSqlMdHuspcvWg==,iv:HJBrxkF7eI5B2cubpPaJGQyOX3rlXTsfQ9u+rq7iaNY=,tag:FmHrmzfaZJGhIK8LsqdyCQ==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1u74ps32m3mcvd6zjaw8w2p3wwfucz0r2rxrsxmq8ldlyv5lapgkqle505u
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBoNlVMTDMvNTJKWE9Wd1hS
+            SnlMbzB0Y2FKZTRlUXI4UDgyTXZVRUd0bDBvCkpJUTIzakRwNC8vbXVJV2lMcU16
+            ZytmdWNPMTFwNDYzelhObWNaNjdxUG8KLS0tIGFZQjRzU0loYU4xMG1udE4vM3dS
+            ZjZFeDcvV2E5NkkxanBzcVgzM3hkSDAKmKct3eR3fOWGkLf5dbHv9NBx2Fxg2JJJ
+            +hb4Nh53y0dxEAM8ZJ2gIrkVpg3aLhO2Z/dGXSm9CaJkQnhN5d5www==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-05-02T20:30:49Z"
+    mac: ENC[AES256_GCM,data:X/phX3d8HVmz1E2CECf53h4hex+i4ormVUBuf6OajIKLikMLu4aRdJMODqQrD0Pnn74uoAi4pkkbPJhKeHjVv0BGaVuO98PMR4hd0YTYAWXkjuShRu93Q/gcpYo0JrRT4ZfOBSmeWAOMs34eKCbNUvppdsJhnTWcfLOa8hxLsik=,iv:5Obp4UxBDIoAcvn5VKy3C+mhiM7iNgr2hSSe4PdgJFQ=,tag:8RI/4yYqrNV/5DTXxlCRew==,type:str]
+    pgp: []
+    unencrypted_suffix: _unencrypted
+    version: 3.7.3

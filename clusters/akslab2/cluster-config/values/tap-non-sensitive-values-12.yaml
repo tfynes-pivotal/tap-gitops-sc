@@ -1,0 +1,122 @@
+---
+tap_install:
+  values: 
+        shared:
+          ingress_domain: "akslab2.tap.fynesy.com"
+          ingress_issuer: "letsencrypt-production"
+          #!ingress_issuer: ""
+
+        #!  image_registry:
+        #!    project_path: "SERVER-NAME/REPO-NAME"
+        #!    secret:
+        #!      name: "KP-DEFAULT-REPO-SECRET"
+        #!      namespace: "KP-DEFAULT-REPO-SECRET-NAMESPACE"
+
+
+        #!  kubernetes_version: "K8S-VERSION" # Required regardless of distribution when Kubernetes version is 1.25 or later.
+
+          #!ca_cert_data: | # To be passed if using custom certificates.
+                #! -----BEGIN CERTIFICATE-----
+                #! MIIFFjCCAv6gAwIBAgIRAJErCErPDBinU/bWLiWnX1owDQYJKoZIhvcNAQELBQAw
+                #! TzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh
+                #! cmNoIEdyb3VwMRUwEwYDVQQDEwxJU1JHIFJvb3QgWDEwHhcNMjAwOTA0MDAwMDAw
+                #! WhcNMjUwOTE1MTYwMDAwWjAyMQswCQYDVQQGEwJVUzEWMBQGA1UEChMNTGV0J3Mg
+                #! RW5jcnlwdDELMAkGA1UEAxMCUjMwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK
+                #! AoIBAQC7AhUozPaglNMPEuyNVZLD+ILxmaZ6QoinXSaqtSu5xUyxr45r+XXIo9cP
+                #! R5QUVTVXjJ6oojkZ9YI8QqlObvU7wy7bjcCwXPNZOOftz2nwWgsbvsCUJCWH+jdx
+                #! sxPnHKzhm+/b5DtFUkWWqcFTzjTIUu61ru2P3mBw4qVUq7ZtDpelQDRrK9O8Zutm
+                #! NHz6a4uPVymZ+DAXXbpyb/uBxa3Shlg9F8fnCbvxK/eG3MHacV3URuPMrSXBiLxg
+                #! Z3Vms/EY96Jc5lP/Ooi2R6X/ExjqmAl3P51T+c8B5fWmcBcUr2Ok/5mzk53cU6cG
+                #! /kiFHaFpriV1uxPMUgP17VGhi9sVAgMBAAGjggEIMIIBBDAOBgNVHQ8BAf8EBAMC
+                #! AYYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMBMBIGA1UdEwEB/wQIMAYB
+                #! Af8CAQAwHQYDVR0OBBYEFBQusxe3WFbLrlAJQOYfr52LFMLGMB8GA1UdIwQYMBaA
+                #! FHm0WeZ7tuXkAXOACIjIGlj26ZtuMDIGCCsGAQUFBwEBBCYwJDAiBggrBgEFBQcw
+                #! AoYWaHR0cDovL3gxLmkubGVuY3Iub3JnLzAnBgNVHR8EIDAeMBygGqAYhhZodHRw
+                #! Oi8veDEuYy5sZW5jci5vcmcvMCIGA1UdIAQbMBkwCAYGZ4EMAQIBMA0GCysGAQQB
+                #! gt8TAQEBMA0GCSqGSIb3DQEBCwUAA4ICAQCFyk5HPqP3hUSFvNVneLKYY611TR6W
+                #! PTNlclQtgaDqw+34IL9fzLdwALduO/ZelN7kIJ+m74uyA+eitRY8kc607TkC53wl
+                #! ikfmZW4/RvTZ8M6UK+5UzhK8jCdLuMGYL6KvzXGRSgi3yLgjewQtCPkIVz6D2QQz
+                #! CkcheAmCJ8MqyJu5zlzyZMjAvnnAT45tRAxekrsu94sQ4egdRCnbWSDtY7kh+BIm
+                #! lJNXoB1lBMEKIq4QDUOXoRgffuDghje1WrG9ML+Hbisq/yFOGwXD9RiX8F6sw6W4
+                #! avAuvDszue5L3sz85K+EC4Y/wFVDNvZo4TYXao6Z0f+lQKc0t8DQYzk1OXVu8rp2
+                #! yJMC6alLbBfODALZvYH7n7do1AZls4I9d1P4jnkDrQoxB3UqQ9hVl3LEKQ73xF1O
+                #! yK5GhDDX8oVfGKF5u+decIsH4YaTw7mP3GFxJSqv3+0lUFJoi5Lc5da149p90Ids
+                #! hCExroL1+7mryIkXPeFM5TgO9r0rvZaBFOvV2z0gp35Z0+L4WPlbuEjN/lxPFin+
+                #! HlUjr8gRsI3qfJOQFy/9rKIJR0Y/8Omwt/8oTWgy1mdeHmmjk7j1nYsvC9JSQ6Zv
+                #! MldlTTKB3zhThV1+XWYp6rjd5JW1zbVWEkLNxE7GJThEUG3szgBVGP7pSWTUTsqX
+                #! nLRbwHOoq7hHwg==
+                #! -----END CERTIFICATE-----
+         
+
+        ceip_policy_disclosed: true
+
+
+
+        profile: full 
+        supply_chain: basic 
+
+        ootb_supply_chain_basic: 
+          registry:
+            server: "index.docker.io"
+            repository: "fynesy"
+          gitops:
+            ssh_secret: ""
+
+        contour:
+          envoy:
+            service:
+              type: LoadBalancer 
+
+        buildservice:
+          kp_default_repository: "fynesy/buildservice"
+
+        tap_gui:
+          service_type: ClusterIP # If the shared.ingress_domain is set as earlier, this must be set to ClusterIP.
+          metadataStoreAutoconfiguration: true 
+          app_config:
+            auth:
+              allowGuestAccess: true
+            catalog:
+              locations:
+                - type: url
+                  target: http://github.com/tfynes-pivotal/tapblankcatalog/blob/main/catalog-info.yaml
+
+        metadata_store:
+          ns_for_export_app_cert: "*"
+          app_service_type: ClusterIP # Defaults to LoadBalancer. If shared.ingress_domain is set earlier, this must be set to ClusterIP.
+
+        scanning:
+          metadataStore:
+            url: "" 
+
+        grype:
+          namespace: "default"
+          targetImagePullSecret: "tap-registry"
+          # In a single cluster, the connection between the scanning pod and the metadata store happens inside the cluster and does not pass through ingress. This is automatically configured, you do not need to provide an ingress connection to the store.
+
+        policy:
+          tuf_enabled: false 
+
+        cnrs:
+          domain_template: '{{.Name}}-{{.Namespace}}.{{.Domain}}'
+
+        namespace_provisioner:
+          controller: false
+          gitops_install:
+            ref: origin/main
+            subPath: clusters/akslab2/cluster-config/namespaces
+            url: https://github.com/tfynes-pivotal/tap-gitops2
+          additional_sources:
+          - git:
+              ref: origin/main
+              subPath: clusters/akslab2/cluster-config/namespaces/namespace-resources
+              url: https://github.com/tfynes-pivotal/tap-gitops2
+            path: _ytt_lib/namespace-resources
+          import_data_values_secrets:
+           - name: my-dockerhub-credentials
+             namespace: tap-install
+             create_export: true
+        package_overlays:
+        - name: tap-gui
+          secrets:
+          - name: cm-tap-gui-sa-overlay
