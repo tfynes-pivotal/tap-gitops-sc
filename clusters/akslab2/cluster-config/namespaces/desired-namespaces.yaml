@@ -2,3 +2,5 @@
 ---
 namespaces:
 - name: default
+- name: dev
+- name: dev2
