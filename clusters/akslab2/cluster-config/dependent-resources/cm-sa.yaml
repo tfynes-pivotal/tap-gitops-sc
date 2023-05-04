@@ -4,5 +4,5 @@ metadata:
   name: cm-sa
   namespace: tap-gui
 imagePullSecrets:
-- name: private-registry-credentials
+- name: install-registry-dockerconfig
   namespace: tap-gui
