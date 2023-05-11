@@ -4,6 +4,6 @@ metadata:
   name: tdemo1-gateway-mapping
 spec:
   gatewayRef:
-    name: tdemo1-gateway
+    name: tdemo-gateway
   routeConfigRef:
     name: tdemo1-gateway-route
