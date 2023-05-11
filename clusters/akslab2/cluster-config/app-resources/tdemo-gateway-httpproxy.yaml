@@ -7,6 +7,6 @@ spec:
   routes:
   - services: 
     - name: tdemo-gateway
-    port: 80
+      port: 80
   virtualhost:
     fqdn: tdemo.akslab2a.tap.fynesy.com
