@@ -21,7 +21,7 @@ spec:
   seccompProfile:
     type: RuntimeDefault
   imagePullSecret:
-    name: regsecret
+    name: registries-credentials
   persistentVolumeClaimPolicy: delete
 #  highAvailability:
 #    enabled: true
