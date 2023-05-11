@@ -12,3 +12,5 @@ spec:
           port: 80
   virtualhost:
     fqdn: tdemo.akslab2a.tap.fynesy.com
+    tls:
+      secretName: app-tls-cert
