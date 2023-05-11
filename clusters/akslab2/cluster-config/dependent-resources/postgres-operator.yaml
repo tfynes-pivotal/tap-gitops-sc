@@ -14,9 +14,9 @@ metadata:
 spec:
   packageRef:
     refName: postgres-operator.sql.tanzu.vmware.com
-    #!versionSelection:
-      #!constraints: #@ data.values.postgres_operator.version
-      #!prereleases: {}
+    versionSelection:
+      constraints: 2.0.1
+      prereleases: {}
   serviceAccountName: tap-install-sa
   #!values:
   #!- secretRef:
