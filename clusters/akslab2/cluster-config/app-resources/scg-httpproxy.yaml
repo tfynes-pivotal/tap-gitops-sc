@@ -1,0 +1,11 @@
+apiVersion: projectcontour.io/v1
+kind: HTTPProxy
+metadata:
+  name: tdemo-gateway
+  namespace: default
+spec:
+  routes:
+  - services: tdemo1
+    port: 80
+  virtualhost:
+    fqdn: tdemo.akslab2a.tap.fynesy.com
