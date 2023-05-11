@@ -4,6 +4,7 @@ metadata:
   name: tdemo-gateway
   namespace: default
 spec:
+  count: 2
   api:
     title: tdemo1 apis
     version: 0.0.1
