@@ -5,8 +5,10 @@ metadata:
   namespace: default
 spec:
   routes:
-  - services: 
-    - name: tdemo-gateway
-      port: 80
+    - conditions:
+      - prefix: /
+      services: 
+        - name: tdemo-gateway
+          port: 80
   virtualhost:
     fqdn: tdemo.akslab2a.tap.fynesy.com
