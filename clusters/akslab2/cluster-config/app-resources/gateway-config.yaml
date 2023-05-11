@@ -1,7 +1,7 @@
 apiVersion: "tanzu.vmware.com/v1"
 kind: SpringCloudGateway
 metadata:
-  name: tdemo-services-gateway
+  name: tdemo-gateway
   namespace: default
 spec:
   api:
