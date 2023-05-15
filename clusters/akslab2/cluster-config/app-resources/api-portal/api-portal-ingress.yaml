@@ -9,7 +9,7 @@ spec:
   tls:
   - hosts:
     #! - api-portal.akslab2a.tap.fynesy.com
-    - secretName: api-portal-tls-cert
+      - secretName: api-portal-tls-cert
   rules:
   - host: api-portal.system.akslab2a.tap.fynesy.com
     http:
