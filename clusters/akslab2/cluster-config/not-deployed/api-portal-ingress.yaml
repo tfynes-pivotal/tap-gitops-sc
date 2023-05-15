@@ -6,12 +6,8 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: contour
 spec:
-  tls:
-  - hosts:
-    #! - api-portal.akslab2a.tap.fynesy.com
-      - secretName: api-portal-tls-cert
   rules:
-  - host: api-portal.system.akslab2a.tap.fynesy.com
+  - host: api-portal.tap.fynesy.com
     http:
       paths:
       - pathType: Prefix
