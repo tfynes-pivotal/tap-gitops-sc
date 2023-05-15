@@ -8,7 +8,7 @@ spec:
     - conditions:
       - prefix: /
       services: 
-        - name: api-portal
+        - name: api-portal-server
           port: 8080
   virtualhost:
     fqdn: api-portal.akslab2a.tap.fynesy.com
