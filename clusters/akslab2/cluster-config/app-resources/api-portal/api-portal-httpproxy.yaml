@@ -5,8 +5,12 @@ metadata:
   namespace: api-portal
 spec:
   routes:
-  - services:
-    - name: api-portal-server
-      port: 8080
+    - conditions:
+      - prefix: /
+      services: 
+        - name: api-portal
+          port: 8080
   virtualhost:
     fqdn: api-portal.akslab2a.tap.fynesy.com
+    tls:
+      secretName: api-portal-tls-cert
