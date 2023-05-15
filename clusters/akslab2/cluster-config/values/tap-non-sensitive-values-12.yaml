@@ -58,7 +58,7 @@ tap_install:
 
         api_portal:
           apiPortalServer:
-            sourceUrls: https://petstore.swagger.io/v2/swagger.json,https://scg-operator.tap-install.cluster.local/openapi
+            sourceUrls: https://petstore.swagger.io/v2/swagger.json,https://10.0.96.156/openapi
             #!ingressIssuer: "letsencrypt-production"
             #!ingressDomain: "akslab2a.tap.fynesy.com"
 
