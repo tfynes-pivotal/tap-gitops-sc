@@ -12,7 +12,8 @@ spec:
     value:
       autoscaling.knative.dev/minScale: "1"
   env:
-    foo: bar
+    - name: foo
+      value: bar
   source:
     git:
       ref:
