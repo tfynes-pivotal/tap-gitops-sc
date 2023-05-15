@@ -56,7 +56,7 @@ tap_install:
         cnrs:
           domain_template: '{{.Name}}-{{.Namespace}}.{{.Domain}}'
 
-        api-portal:
+        api_portal:
           apiPortalServer:
             sourceUrls: https://petstore.swagger.io/v2/swagger.json
 
