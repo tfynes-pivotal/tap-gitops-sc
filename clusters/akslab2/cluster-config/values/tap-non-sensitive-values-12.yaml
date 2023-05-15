@@ -59,7 +59,10 @@ tap_install:
         api_portal:
           apiPortalServer:
             sourceUrls: https://petstore.swagger.io/v2/swagger.json
-
+            ingressIssuer: "letsencrypt-production"
+            ingressDomain: "akslab2a.tap.fynesy.com"
+          sso: 
+            secretName: api-portal-tls-cert
 
         namespace_provisioner:
           controller: false
