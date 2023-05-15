@@ -11,6 +11,9 @@ spec:
   - name: annotations
     value:
       autoscaling.knative.dev/minScale: "1"
+  env:
+    - name: message
+      value: tanzu1
   source:
     git:
       ref:
