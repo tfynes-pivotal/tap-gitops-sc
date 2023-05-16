@@ -4,7 +4,12 @@ metadata:
   name: tdemo-gateway
   namespace: default
 spec:
-  count: 2
+  count: 1
   api:
-    title: tdemo1 apis
+    serverUrl: tdemo.akslab2a.tap.fynesy.com
+    title: Tanzu Demo APIs
+    description: Sample basic SCG + TAP Demo
     version: 0.0.1
+    cors:
+      allowedOrigins:
+      - "https://api-portal.akslab2a.tap.fynesy.com"
