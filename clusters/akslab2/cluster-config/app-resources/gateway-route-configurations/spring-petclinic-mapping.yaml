@@ -1,7 +1,7 @@
 apiVersion: "tanzu.vmware.com/v1"
 kind: SpringCloudGatewayMapping
 metadata:
-  name: tdemo1-gateway-mapping
+  name: spring-petclinic-gateway-mapping
   namespace: default
 spec:
   gatewayRef:
