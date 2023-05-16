@@ -9,19 +9,17 @@ spec:
   routes:
   - predicates:
       - Path=/petclinic/**
-      - order=1000
     filters:
       - StripPrefix=1
       - PrefixPath=/
+    order: 1000
   - predicates:
       - Path=/petclinic/webjars/**
-      - order=1
     filters:
       - StripPrefix=0
       - PrefixPath=/
   - predicates:
       - Path=/petclinic/resources/**
-      - order=2
     filters:
       - StripPrefix=0
       - PrefixPath=/
