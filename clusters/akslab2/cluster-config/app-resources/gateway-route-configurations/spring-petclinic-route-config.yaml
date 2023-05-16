@@ -18,8 +18,10 @@ spec:
     filters:
       - StripPrefix=0
       - PrefixPath=/
+    order: 1
   - predicates:
       - Path=/petclinic/resources/**
     filters:
       - StripPrefix=0
       - PrefixPath=/
+    order: 2
