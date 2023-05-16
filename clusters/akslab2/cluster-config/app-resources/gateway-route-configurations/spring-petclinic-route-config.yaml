@@ -14,13 +14,13 @@ spec:
       - PrefixPath=/
     order: 1000
   - predicates:
-      - Path=/petclinic/webjars/**
+      - Path=/webjars/**
     filters:
       - StripPrefix=0
       - PrefixPath=/
     order: 1
   - predicates:
-      - Path=/petclinic/resources/**
+      - Path=/resources/**
     filters:
       - StripPrefix=0
       - PrefixPath=/
