@@ -58,7 +58,7 @@ tap_install:
 
         api_portal:
           apiPortalServer:
-            sourceUrls: https://petstore.swagger.io/v2/swagger.json,http://10.0.96.156/openapi
+            sourceUrls: https://petstore.swagger.io/v2/swagger.json,http://10.0.166.161/openapi
             trustInsecureSourceUrls: true
 
         namespace_provisioner:
