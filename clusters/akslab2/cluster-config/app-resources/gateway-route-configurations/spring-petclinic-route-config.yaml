@@ -12,8 +12,8 @@ spec:
     filters:
       - StripPrefix=1
       - PrefixPath=/
-      - RewritePath=/webjars/**,/petclinic/webjars/**
-      - RewritePath=/resources/**,/petclinic/resources/**
+      - RewritePath=/webjars(?<segment>/?.*),/petclinic/webjars/$\{segment}
+      - RewritePath=/resources(?<segmentb>/?.*),/petclinic/resources/$\{segmentb}
     order: 1000
   #- predicates:
   #    - Path=/webjars/**
