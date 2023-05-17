@@ -69,6 +69,8 @@ tap_install:
             serviceAccount:
               create: true
               name: api-portal-service-account
+          sso:
+            enabled: true
 
         namespace_provisioner:
           controller: false
