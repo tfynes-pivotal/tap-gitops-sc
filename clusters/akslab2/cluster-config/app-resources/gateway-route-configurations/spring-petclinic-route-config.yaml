@@ -8,21 +8,7 @@ spec:
     name: spring-petclinic
   routes:
   - predicates:
-      - Path=/petclinic/**
-    filters:
-      - StripPrefix=1
-      - PrefixPath=/
-      - RewritePath=/(?<segment>/?.*),/petclinic/$\{segment}
-    order: 1000
-  - predicates:
-      - Path=/webjars/**
+      - Path=/**
     filters:
       - StripPrefix=0
       - PrefixPath=/
-    order: 1
-  - predicates:
-      - Path=/resources/**
-    filters:
-      - StripPrefix=0
-      - PrefixPath=/
-    order: 2
