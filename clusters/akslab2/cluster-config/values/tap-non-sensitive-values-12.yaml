@@ -18,6 +18,13 @@ tap_install:
           gitops:
             ssh_secret: ""
 
+        ootb_supply_chain_testing_scanning:
+          registry:
+            server: "index.docker.io"
+            repository: "fynesy"
+          gitops:
+            ssh_secret: ""
+
         contour:
           envoy:
             service:
