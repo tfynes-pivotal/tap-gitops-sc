@@ -1,0 +1,11 @@
+---
+apiVersion: scanning.apps.tanzu.vmware.com/v1beta1
+kind: SourceScan
+metadata:
+  name: sample-public-source-scan-with-compliance-check
+spec:
+  git:
+    url: "https://github.com/houndci/hound.git"
+    revision: "5805c650"
+  scanTemplate: public-source-scan-template
+  scanPolicy: scan-policy
