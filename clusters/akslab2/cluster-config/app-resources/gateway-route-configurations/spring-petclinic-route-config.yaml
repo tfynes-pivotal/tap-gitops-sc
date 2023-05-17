@@ -12,18 +12,17 @@ spec:
     filters:
       - StripPrefix=1
       - PrefixPath=/
-      - RewritePath=/webjars(?<segment>/?.*),/petclinic/webjars/$\{segment}
-      - RewritePath=/resources(?<segmentb>/?.*),/petclinic/resources/$\{segmentb}
+    #!  - RewritePath=/webjars(?<segment>/?.*),/petclinic/webjars/$\{segment}
     order: 1000
-  #- predicates:
-  #    - Path=/webjars/**
-  #  filters:
-  #    - StripPrefix=0
-  #    - PrefixPath=/
-  #  order: 1
-  #- predicates:
-  #    - Path=/resources/**
-  #  filters:
-  #    - StripPrefix=0
-  #    - PrefixPath=/
-  #  order: 2
+  - predicates:
+      - Path=/webjars/**
+    filters:
+      - StripPrefix=0
+      - PrefixPath=/
+    order: 1
+  - predicates:
+      - Path=/resources/**
+    filters:
+      - StripPrefix=0
+      - PrefixPath=/
+    order: 2
