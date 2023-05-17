@@ -1,7 +1,7 @@
 apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
-  name: spring-petclinic
+  name: spring-petclinic-protected
   namespace: default
   labels:
     apps.tanzu.vmware.com/has-tests: "true"

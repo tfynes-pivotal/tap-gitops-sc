@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   service:
-    name: spring-petclinic
+    name: spring-petclinic-protected
   routes:
   - predicates:
       - Path=/**
