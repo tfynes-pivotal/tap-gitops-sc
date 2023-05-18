@@ -4,7 +4,7 @@ metadata:
   name: spring-petclinic-protected
   namespace: default
   labels:
-    #!apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/has-tests: "true"
     apps.tanzu.vmware.com/workload-type: web
     app.kubernetes.io/part-of: spring-petclinic
     networking.knative.dev/visibility: cluster-local
