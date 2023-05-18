@@ -65,7 +65,8 @@ tap_install:
 
         api_portal:
           apiPortalServer:
-            sourceUrls: https://petstore.swagger.io/v2/swagger.json,http://10.0.166.161/openapi
+            #!sourceUrls: https://petstore.swagger.io/v2/swagger.json,http://10.0.166.161/openapi
+            sourceUrls: https://petstore.swagger.io/v2/swagger.json,http://scg-operator.tap-install.svc.cluster.local/openapi
             trustInsecureSourceUrls: true
           # apiKey:
           #   enabled: true
