@@ -1,0 +1,14 @@
+apiVersion: "tanzu.vmware.com/v1"
+kind: SpringCloudGatewayRouteConfig
+metadata:
+  name: tdemo3-gateway-route
+  namespace: default
+spec:
+  service:
+    name: tdemo1
+  routes:
+  - predicates:
+      - Path=/tdemo3/**
+    filters:
+      - StripPrefix=1
+      - PrefixPath=/
