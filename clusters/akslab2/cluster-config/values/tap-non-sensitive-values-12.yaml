@@ -2,7 +2,7 @@
 tap_install:
   values: 
         shared:
-          ingress_domain: "akslab2a.tap.fynesy.com"
+          ingress_domain: "akslab.tap.fynesy.com"
           ingress_issuer: "letsencrypt-production"
 
 
@@ -88,12 +88,12 @@ tap_install:
           gitops_install:
             ref: origin/main
             subPath: clusters/akslab2/cluster-config/namespaces
-            url: https://github.com/tfynes-pivotal/tap-gitops2
+            url: https://github.com/tfynes-pivotal/tap-gitops-sc
           additional_sources:
           - git:
               ref: origin/main
               subPath: clusters/akslab2/cluster-config/namespaces/namespace-resources
-              url: https://github.com/tfynes-pivotal/tap-gitops2
+              url: https://github.com/tfynes-pivotal/tap-gitops-sc
             path: _ytt_lib/namespace-resources
         #!  import_data_values_secrets:
         #!   - name: my-dockerhub-credentials

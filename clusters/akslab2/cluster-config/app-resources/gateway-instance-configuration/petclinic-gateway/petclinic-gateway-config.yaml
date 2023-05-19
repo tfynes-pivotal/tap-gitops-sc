@@ -11,4 +11,4 @@ spec:
     version: 0.0.1
     cors:
       allowedOrigins:
-      - "https://api-portal.akslab2a.tap.fynesy.com"
+      - "https://api-portal.akslab.tap.fynesy.com"
