@@ -2,6 +2,6 @@
 git:
   url: https://github.com/tfynes-pivotal/tap-gitops-sc
   ref: origin/main
-  sub_path: clusters/akslab2/cluster-config
+  sub_path: clusters/tap-gitops-sc/cluster-config
 tap_package_repository:
   oci_repository: registry.tanzu.vmware.com/tanzu-application-platform/tap-packages
