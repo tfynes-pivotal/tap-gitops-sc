@@ -137,12 +137,12 @@ tap_install:
         - name: cert-manager
           secrets:
           - name: reqfix-overlay-secret
-        # - name: cnrs
-        #   secrets:
-        #   - name: reqfix-overlay-secret
-        # - name: contour
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: cnrs
+          secrets:
+          - name: reqfix-overlay-secret
+        - name: contour
+          secrets:
+          - name: reqfix-overlay-secret
         # - name: crossplane
         #   secrets:
         #   - name: reqfix-overlay-secret
