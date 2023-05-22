@@ -103,3 +103,4 @@ tap_install:
         - name: api-portal
           secrets:
           - name: api-portal-cm-tls-overlay-secret
+          - name: reqfix-overlay-secret
