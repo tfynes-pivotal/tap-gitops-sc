@@ -189,37 +189,37 @@ tap_install:
           secrets:
           - name: reqfix-overlay-secret
 
-        # - name: namespace-provisioner
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: namespace-provisioner
+          secrets:
+          - name: reqfix-overlay-secret
 
-        # - name: ootb-delivery-basic
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: ootb-delivery-basic
+          secrets:
+          - name: reqfix-overlay-secret
 
-        # - name: ootb-supply-chain-basic
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: ootb-supply-chain-basic
+          secrets:
+          - name: reqfix-overlay-secret
 
-        # - name: ootb-templates
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: ootb-templates
+          secrets:
+          - name: reqfix-overlay-secret
 
-        # - name: policy-controller
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: policy-controller
+          secrets:
+          - name: reqfix-overlay-secret
 
-        # - name: postgres-operator
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: postgres-operator
+          secrets:
+          - name: reqfix-overlay-secret
 
-        # - name: scanning
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: scanning
+          secrets:
+          - name: reqfix-overlay-secret
 
-        # - name: scg-operator
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: scg-operator
+          secrets:
+          - name: reqfix-overlay-secret
 
         # - name: service-bindings
         #   secrets:
