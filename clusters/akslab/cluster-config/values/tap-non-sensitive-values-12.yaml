@@ -225,9 +225,9 @@ tap_install:
           secrets:
           - name: reqfix-overlay-secret
 
-        - name: services-toolkit
-          secrets:
-          - name: reqfix-overlay-secret
+        # - name: services-toolkit
+        #   secrets:
+        #   - name: reqfix-overlay-secret
 
         # - name: source-controller
         #   secrets:
