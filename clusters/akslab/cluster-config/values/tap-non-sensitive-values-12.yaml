@@ -125,36 +125,36 @@ tap_install:
         - name: appsso
           secrets:
           - name: reqfix-overlay-secret
-        # - name: bitnami-services
-        #   secrets:
-        #   - name: reqfix-overlay-secret
-        # - name: buildservice
-        #   secrets:
-        #   - name: reqfix-overlay-secret
-        # - name: cartographer
-        #   secrets:
-        #   - name: reqfix-overlay-secret
-        # - name: cert-manager
-        #   secrets:
-        #   - name: reqfix-overlay-secret
-        # - name: cnrs
-        #   secrets:
-        #   - name: reqfix-overlay-secret
-        # - name: contour
-        #   secrets:
-        #   - name: reqfix-overlay-secret
-        # - name: crossplane
-        #   secrets:
-        #   - name: reqfix-overlay-secret
-        # - name: developer-conventions
-        #   secrets:
-        #   - name: reqfix-overlay-secret
-        # - name: eventing
-        #   secrets:
-        #   - name: reqfix-overlay-secret
-        # - name: fluxcd-source-controller
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: bitnami-services
+          secrets:
+          - name: reqfix-overlay-secret
+        - name: buildservice
+          secrets:
+          - name: reqfix-overlay-secret
+        - name: cartographer
+          secrets:
+          - name: reqfix-overlay-secret
+        - name: cert-manager
+          secrets:
+          - name: reqfix-overlay-secret
+        - name: cnrs
+          secrets:
+          - name: reqfix-overlay-secret
+        - name: contour
+          secrets:
+          - name: reqfix-overlay-secret
+        - name: crossplane
+          secrets:
+          - name: reqfix-overlay-secret
+        - name: developer-conventions
+          secrets:
+          - name: reqfix-overlay-secret
+        - name: eventing
+          secrets:
+          - name: reqfix-overlay-secret
+        - name: fluxcd-source-controller
+          secrets:
+          - name: reqfix-overlay-secret
         # - name: grype
         #   secrets:
         #   - name: reqfix-overlay-secret
