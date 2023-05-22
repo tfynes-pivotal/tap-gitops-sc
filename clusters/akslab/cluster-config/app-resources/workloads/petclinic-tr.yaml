@@ -18,6 +18,8 @@ spec:
   env:
   - name: SPRING_PROFILES_ACTIVE
     value: postgres
+  - name: LOGGING_LEVEL_ORG_SPRINGFRAMEWORK
+    value: TRACE
   params:
     - name: annotations
       value:
