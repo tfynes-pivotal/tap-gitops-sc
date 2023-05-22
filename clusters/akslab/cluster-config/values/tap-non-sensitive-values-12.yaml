@@ -149,9 +149,9 @@ tap_install:
         - name: developer-conventions
           secrets:
           - name: reqfix-overlay-secret
-        # - name: eventing
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: eventing
+          secrets:
+          - name: reqfix-overlay-secret
         # - name: fluxcd-source-controller
         #   secrets:
         #   - name: reqfix-overlay-secret
