@@ -1,9 +1,0 @@
-#@ load("@ytt:overlay", "overlay")
-
-#@overlay/match by=overlay.subset({"kind":"PackageInstall","metadata":{"name":"tap"}}), expects="0+"
----
-metadata:
-  #@overlay/match missing_ok=True
-  annotations:
-    #@overlay/match missing_ok=True
-    ext.packaging.carvel.dev/ytt-paths-from-secret-name.0: reqfix-tap-overlay-secret
