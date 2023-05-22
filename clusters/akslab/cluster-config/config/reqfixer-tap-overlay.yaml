@@ -1,0 +1,49 @@
+#@ load("@ytt:overlay", "overlay")
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: reqfix-tap-overlay-secret
+  namespace: tap-install
+stringData:
+  patch.yml: |
+    #@ load("@ytt:overlay", "overlay")
+    #@ deployments = overlay.subset({"kind":"Deployment"})
+    #@ daemonsets =  overlay.subset({"kind":"DaemonSet"})
+    #@overlay/match by=overlay.or_op(deployments, daemonsets), expects="0+"
+    ---
+    spec:
+      template:
+        spec:
+          containers: 
+          #@overlay/match by=overlay.all, expects="0+" 
+          -
+            #@overlay/match missing_ok=True 
+            #@overlay/remove
+            resources:
+
+
+#@overlay/match by=overlay.subset({"kind":"PackageInstall"}), expects="0+"
+---
+metadata:
+  #@overlay/match missing_ok=True
+  annotations:
+    #@overlay/match missing_ok=True
+    ext.packaging.carvel.dev/ytt-paths-from-secret-name.2: reqfix-overlay-secret
+
+#@overlay/match by=overlay.subset({"kind":"Secret","metadata":{"name":"reqfix-overlay-secret"}})
+---
+metadata:
+  #@overlay/match missing_ok=True
+  annotations:
+    #@overlay/remove
+    kapp.k14s.io/versioned: 
+
+
+#@overlay/match by=overlay.subset({"kind":"PackageInstall","metadata":{"name":"tap"}}), expects="0+"
+---
+metadata:
+  #@overlay/match missing_ok=True
+  annotations:
+    #@overlay/match missing_ok=True
+    ext.packaging.carvel.dev/ytt-paths-from-secret-name.0: reqfix-tap-overlay-secret
