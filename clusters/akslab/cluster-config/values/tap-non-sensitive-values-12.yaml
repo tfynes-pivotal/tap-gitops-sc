@@ -164,12 +164,12 @@ tap_install:
         - name: learningcenter-workshops
           secrets:
           - name: reqfix-overlay-secret
-        # - name: metadata-store
-        #   secrets:
-        #   - name: reqfix-overlay-secret
-        # - name: namespace-provisioner
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: metadata-store
+          secrets:
+          - name: reqfix-overlay-secret
+        - name: namespace-provisioner
+          secrets:
+          - name: reqfix-overlay-secret
         # - name: ootb-delivery-basic
         #   secrets:
         #   - name: reqfix-overlay-secret
