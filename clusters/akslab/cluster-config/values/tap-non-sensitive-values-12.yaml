@@ -209,47 +209,40 @@ tap_install:
           secrets:
           - name: reqfix-overlay-secret
 
-        - name: postgres-operator
-          secrets:
-          - name: reqfix-overlay-secret
 
         - name: scanning
           secrets:
           - name: reqfix-overlay-secret
 
-        # - name: scg-operator
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: service-bindings
+          secrets:
+          - name: reqfix-overlay-secret
 
-        # - name: service-bindings
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: services-toolkit
+          secrets:
+          - name: reqfix-overlay-secret
 
-        # - name: services-toolkit
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: source-controller
+          secrets:
+          - name: reqfix-overlay-secret
 
-        # - name: source-controller
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: spring-boot-conventions
+          secrets:
+          - name: reqfix-overlay-secret
 
-        # - name: spring-boot-conventions
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: tap-auth
+          secrets:
+          - name: reqfix-overlay-secret
 
-        # - name: tap-auth
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: tap-gui
+          secrets:
+          - name: reqfix-overlay-secret
 
-        # - name: tap-gui
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: tap-telemetry
+          secrets:
+          - name: reqfix-overlay-secret
 
-        # - name: tap-telemetry
-        #   secrets:
-        #   - name: reqfix-overlay-secret
-
-        # - name: tekton-pipelines
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: tekton-pipelines
+          secrets:
+          - name: reqfix-overlay-secret
 
