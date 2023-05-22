@@ -158,12 +158,12 @@ tap_install:
         - name: grype
           secrets:
           - name: reqfix-overlay-secret
-        # - name: learningcenter
-        #   secrets:
-        #   - name: reqfix-overlay-secret
-        # - name: learningcenter-workshops
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: learningcenter
+          secrets:
+          - name: reqfix-overlay-secret
+        - name: learningcenter-workshops
+          secrets:
+          - name: reqfix-overlay-secret
         # - name: metadata-store
         #   secrets:
         #   - name: reqfix-overlay-secret
