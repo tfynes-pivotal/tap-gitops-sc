@@ -11,4 +11,3 @@ spec:
       - Path=/**
     filters:
       - StripPrefix=0
-      - PrefixPath=/
