@@ -109,29 +109,29 @@ tap_install:
           secrets:
           - name: reqfix-overlay-secret
 
-        # - name: api-auto-registration
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: api-auto-registration
+          secrets:
+          - name: reqfix-overlay-secret
 
-        # - name: appliveview
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: appliveview
+          secrets:
+          - name: reqfix-overlay-secret
 
-        # - name: appliveview-apiserver
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: appliveview-apiserver
+          secrets:
+          - name: reqfix-overlay-secret
 
-        # - name: appliveview-connector
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: appliveview-connector
+          secrets:
+          - name: reqfix-overlay-secret
 
-        # - name: appliveview-conventions
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: appliveview-conventions
+          secrets:
+          - name: reqfix-overlay-secret
 
-        # - name: appsso
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: appsso
+          secrets:
+          - name: reqfix-overlay-secret
 
         # - name: bitnami-services
         #   secrets:
