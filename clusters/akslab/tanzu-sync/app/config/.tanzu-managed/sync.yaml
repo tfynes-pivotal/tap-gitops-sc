@@ -13,7 +13,6 @@ metadata:
     #! if registry credentials are deleted before sync-managed software is removed, uninstall can be slow or fail.
     kapp.k14s.io/change-rule.2: "delete before deleting tanzu-sync-secrets"
     kapp.k14s.io/change-rule.3: "delete before deleting install-registry-export"
-    #!ext.packaging.carvel.dev/ytt-paths-from-secret-name.2: reqfix-tap-overlay-secret
 spec:
   serviceAccountName: sync-sa
   fetch:
