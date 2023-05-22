@@ -5,7 +5,8 @@ metadata:
   namespace: default
 spec:
   service:
-    name: spring-petclinic-protected
+    #!name: spring-petclinic-protected
+    uri: https://spring-petclinic-protected-default.akslab.tap.fynesy.com
   routes:
   - predicates:
       - Path=/**
