@@ -5,6 +5,9 @@ metadata:
   namespace: default
 spec:
   count: 1
+  env:
+  - name: LOGGING_LEVEL_ORG_SPRINGFRAMEWORK
+    value: TRACE
   api:
     title: Tanzu PetClinic APIs
     description: PetClinic with SCG Demo
