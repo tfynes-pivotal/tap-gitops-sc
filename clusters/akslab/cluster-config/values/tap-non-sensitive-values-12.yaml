@@ -203,9 +203,10 @@ tap_install:
         - name: tap-gui
           secrets:
           - name: reqfix-overlay-secret
-        # - name: tap-telemetry
-        #   secrets:
-        # - name: tekton-pipelines
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: tap-telemetry
+          secrets:
+          - name: reqfix-overlay-secret
+        - name: tekton-pipelines
+          secrets:
+          - name: reqfix-overlay-secret
 
