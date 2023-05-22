@@ -179,15 +179,15 @@ tap_install:
         - name: ootb-templates
           secrets:
           - name: reqfix-overlay-secret
-        # - name: policy-controller
-        #   secrets:
-        #   - name: reqfix-overlay-secret
-        # - name: scanning
-        #   secrets:
-        #   - name: reqfix-overlay-secret
-        # - name: service-bindings
-        #   secrets:
-        #   - name: reqfix-overlay-secret
+        - name: policy-controller
+          secrets:
+          - name: reqfix-overlay-secret
+        - name: scanning
+          secrets:
+          - name: reqfix-overlay-secret
+        - name: service-bindings
+          secrets:
+          - name: reqfix-overlay-secret
         # - name: services-toolkit
         #   secrets:
         #   - name: reqfix-overlay-secret
