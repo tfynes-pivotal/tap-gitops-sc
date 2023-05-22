@@ -3,7 +3,7 @@
 apiVersion: v1
 kind: Secret
 metadata:
-  name: reqfix-tap-overlay-secret
+  name: reqfix-overlay-secret
   namespace: tap-install
 stringData:
   patch.yml: |
