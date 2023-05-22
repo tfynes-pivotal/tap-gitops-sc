@@ -20,6 +20,8 @@ spec:
     value: postgres
   - name: LOGGING_LEVEL_ORG_SPRINGFRAMEWORK
     value: TRACE
+  - name: forward-headers-strategy
+    value: thymeleaf
   params:
     - name: annotations
       value:
