@@ -217,9 +217,9 @@ tap_install:
           secrets:
           - name: reqfix-overlay-secret
 
-        - name: scg-operator
-          secrets:
-          - name: reqfix-overlay-secret
+        # - name: scg-operator
+        #   secrets:
+        #   - name: reqfix-overlay-secret
 
         # - name: service-bindings
         #   secrets:
