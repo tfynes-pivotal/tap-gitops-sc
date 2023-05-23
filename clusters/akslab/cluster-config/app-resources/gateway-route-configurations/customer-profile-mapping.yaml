@@ -5,6 +5,6 @@ metadata:
   namespace: default
 spec:
   gatewayRef:
-    name: customer-profile-gateway
+    name: tdemo-gateway
   routeConfigRef:
     name: customer-profile-gateway-route
