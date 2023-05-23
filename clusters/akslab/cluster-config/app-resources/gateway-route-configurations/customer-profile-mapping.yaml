@@ -1,0 +1,10 @@
+apiVersion: "tanzu.vmware.com/v1"
+kind: SpringCloudGatewayMapping
+metadata:
+  name: customer-profile-gateway-mapping
+  namespace: default
+spec:
+  gatewayRef:
+    name: customer-profile-gateway
+  routeConfigRef:
+    name: customer-profile-gateway-route
