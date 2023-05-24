@@ -11,6 +11,6 @@ spec:
         - name: api-portal-server
           port: 8080
   virtualhost:
-    fqdn: api-portal.akslab1.tap.fynesy.com
+    fqdn: api-portal.akslab1aa.tap.fynesy.com
     tls:
       secretName: api-portal-tls-cert

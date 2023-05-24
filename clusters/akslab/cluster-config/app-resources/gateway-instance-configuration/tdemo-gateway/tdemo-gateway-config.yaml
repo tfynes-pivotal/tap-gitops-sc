@@ -6,10 +6,10 @@ metadata:
 spec:
   count: 1
   api:
-    #!serverUrl: tdemo.akslab1.tap.fynesy.com
+    #!serverUrl: tdemo.akslab1a.tap.fynesy.com
     title: Tanzu Demo APIs
     description: Sample basic SCG + TAP Demo
     version: 0.0.1
     cors:
       allowedOrigins:
-      - "https://api-portal.akslab1.tap.fynesy.com"
+      - "https://api-portal.akslab1a.tap.fynesy.com"
