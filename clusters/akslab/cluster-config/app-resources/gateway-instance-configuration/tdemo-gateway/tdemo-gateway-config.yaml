@@ -10,20 +10,20 @@ spec:
     title: Tanzu Demo APIs
     description: Sample basic SCG + TAP Demo
     version: 0.0.1
-    groupID: "Tanzu Demo"
+    groupID: "tanzu-demo"
     cors:
       allowedOrigins:
       - "https://api-portal.akslab1a.tap.fynesy.com"
 
   serviceAccount:
-    name: spring-cloud-gateway
+    name: tdemo-gateway-svc-acc
 
   extensions:
     secretsProviders:
       - name: vault-api-keys
         vault:
-          roleName: api-portal-policy
-          path: my-api-portal
+          roleName: api-portal-role
+          path: api-portal-for-vmware-tanzu
     filters:
       apiKey:
         enabled: true
