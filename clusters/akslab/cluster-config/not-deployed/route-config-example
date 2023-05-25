@@ -1,0 +1,17 @@
+
+taking customer-profile openapi endpoint
+10.0.113.20:8080/api-docs
+
+and sending it to the route-config generator endpoint on scg operator
+
+
+curl --request POST 'http://10.0.91.210/api/convert/openapi' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "service": {
+        "name": "customer-profile"
+    },
+    "openapi": {
+        "location": "http://10.0.113.20:8080/api-docs"
+    }
+}'

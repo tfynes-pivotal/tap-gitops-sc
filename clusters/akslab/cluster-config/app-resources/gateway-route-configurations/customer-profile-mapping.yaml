@@ -7,4 +7,5 @@ spec:
   gatewayRef:
     name: tdemo-gateway
   routeConfigRef:
-    name: customer-profile-gateway-route
+    #!name: customer-profile-gateway-route
+    name: customer-profile-route-config-auto-generated
