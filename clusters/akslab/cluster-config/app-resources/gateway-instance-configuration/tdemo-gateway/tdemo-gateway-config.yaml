@@ -22,7 +22,7 @@ spec:
     secretsProviders:
       - name: vault-api-keys
         vault:
-          roleName: api-key-role
+          roleName: api-portal-policy
           path: my-api-portal
     filters:
       apiKey:
