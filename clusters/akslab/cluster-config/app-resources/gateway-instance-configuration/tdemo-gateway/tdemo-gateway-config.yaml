@@ -16,7 +16,7 @@ spec:
       - "https://api-portal.akslab1a.tap.fynesy.com"
 
   serviceAccount:
-    name: scg-service-account
+    name: spring-cloud-gateway
 
   extensions:
     secretsProviders:
