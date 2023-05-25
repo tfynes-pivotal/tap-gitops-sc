@@ -72,7 +72,7 @@ tap_install:
             enabled: true
             secretName: sso-credentials
             apiManager:
-              roles: TanzuRead
+              roles: tanzu.read
           # apiKey:
           #   enabled: true
           #   vault:
