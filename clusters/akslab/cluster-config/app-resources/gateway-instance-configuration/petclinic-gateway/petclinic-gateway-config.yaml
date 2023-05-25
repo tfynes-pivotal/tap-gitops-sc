@@ -12,6 +12,7 @@ spec:
     title: Tanzu PetClinic APIs
     description: PetClinic with SCG Demo
     version: 0.0.1
+    groupId: PetClinic
     cors:
       allowedOrigins:
       - "https://api-portal.akslab1a.tap.fynesy.com"
