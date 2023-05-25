@@ -14,3 +14,17 @@ spec:
     cors:
       allowedOrigins:
       - "https://api-portal.akslab1a.tap.fynesy.com"
+
+  serviceAccount:
+    name: scg-service-account
+
+  extensions:
+    secretsProviders:
+      - name: vault-api-keys
+        vault:
+          roleName: api-key-role
+          path: my-api-portal
+    filters:
+      apiKey:
+        enabled: true
+        secretsProviderName: vault-api-keys
