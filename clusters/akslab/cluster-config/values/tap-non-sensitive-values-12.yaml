@@ -73,17 +73,15 @@ tap_install:
             secretName: sso-credentials
             apiManager:
               roles: tanzu.read
-          # apiKey:
-          #   enabled: true
-          #   vault:
-          #     url: http://10.0.57.66:8200
-          #     role: api-portal-role
-          #     path: api-portal-for-vmware-tanzu
-          #   serviceAccount:
-          #     create: true
-          #     name: api-portal-service-account
-          # sso:
-          #   enabled: true
+          apiKey:
+            enabled: true
+            vault:
+              url: http://vault.vault.svc:8200/
+              role: api-portal-role
+              path: api-portal-for-vmware-tanzu
+          serviceAccount:
+            create: true
+            name: api-portal
 
         namespace_provisioner:
           controller: false
