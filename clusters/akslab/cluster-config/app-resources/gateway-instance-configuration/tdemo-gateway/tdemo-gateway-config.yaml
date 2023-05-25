@@ -10,6 +10,7 @@ spec:
     title: Tanzu Demo APIs
     description: Sample basic SCG + TAP Demo
     version: 0.0.1
+    groupID: "Tanzu Demo"
     cors:
       allowedOrigins:
       - "https://api-portal.akslab1a.tap.fynesy.com"
