@@ -71,6 +71,8 @@ tap_install:
           sso:
             enabled: true
             secretName: sso-credentials
+            apiManager:
+              roles: openid
           # apiKey:
           #   enabled: true
           #   vault:
