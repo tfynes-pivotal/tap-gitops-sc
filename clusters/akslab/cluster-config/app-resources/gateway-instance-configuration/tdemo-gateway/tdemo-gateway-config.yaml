@@ -7,6 +7,7 @@ spec:
   count: 1
   api:
     serverUrl: tdemo.akslab1a.tap.fynesy.com
+    uri: https://tdemo.akslab1a.tap.fynesy.com
     title: Tanzu Demo APIs
     description: Sample basic SCG + TAP Demo
     version: 0.0.1
