@@ -13,4 +13,3 @@ spec:
     filters:
       - StripPrefix=1
       - PrefixPath=/
-      - AddRequestHeader=Host,cart
