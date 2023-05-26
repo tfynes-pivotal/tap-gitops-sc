@@ -14,7 +14,11 @@ spec:
     groupID: "tanzu-demo"
     cors:
       allowedOrigins:
-      - "https://api-portal.akslab1a.tap.fynesy.com"
+        - "https://api-portal.akslab1a.tap.fynesy.com"
+      allowedMethods:
+        - "GET"
+      allowedHeaders:
+        - '*'
 
   serviceAccount:
     name: tdemo-gateway-svc-acc
