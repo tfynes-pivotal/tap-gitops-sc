@@ -7,14 +7,13 @@ spec:
   count: 1
   api:
     serverUrl: tdemo.akslab1a.tap.fynesy.com
-    uri: https://tdemo.akslab1a.tap.fynesy.com
     title: Tanzu Demo APIs
     description: Sample basic SCG + TAP Demo
     version: 0.0.1
     groupID: "tanzu-demo"
-    cors:
-      allowedOrigins:
-      - "https://api-portal.akslab1a.tap.fynesy.com"
+    #cors:
+    #  allowedOrigins:
+    #  - "https://api-portal.akslab1a.tap.fynesy.com"
 
   serviceAccount:
     name: tdemo-gateway-svc-acc
