@@ -5,6 +5,7 @@ metadata:
   namespace: default
 spec:
   count: 1
+  host: tdemo.akslab1a.tap.fynesy.com
   api:
     serverUrl: tdemo.akslab1a.tap.fynesy.com
     title: Tanzu Demo APIs
