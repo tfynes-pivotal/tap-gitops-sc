@@ -9,6 +9,7 @@ spec:
   routes:
   - predicates:
       - Path=/tdemo1
+      - Method=GET
     filters:
       - StripPrefix=1
       - PrefixPath=/
