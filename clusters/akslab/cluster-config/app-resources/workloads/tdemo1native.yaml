@@ -1,0 +1,23 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  labels:
+    apps.tanzu.vmware.com/workload-type: web
+    app.kubernetes.io/part-of: tdemo1native
+  name: tdemo1native
+  namespace: default
+spec:
+  build:
+    env:
+    - name: BP_JVM_VERSION
+      value: "17" 
+    - name: BP_MAVEN_BUILD_ARGUMENTS
+      value: "-Pnative native:compile -DskipTests"
+    - name: BP_NATIVE_IMAGE
+      value: "true" 
+ #     value: "-Pnative spring-boot:build-image -Dmanagement.endpoint.health.probes.add-additional-paths=false --no-transfer-progress"
+  source:
+    git:
+      ref:
+        branch: main
+      url: https://github.com/tfynes-pivotal/tdemo1native
