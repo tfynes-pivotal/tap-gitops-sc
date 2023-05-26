@@ -8,9 +8,9 @@ metadata:
   namespace: default
 spec:
   params:
-    - name: annotations
-      value:
-        autoscaling.knative.dev/minScale: "1"
+  - name: annotations
+    value:
+      autoscaling.knative.dev/minScale: "1"
   build:
     env:
     - name: BP_JVM_VERSION
