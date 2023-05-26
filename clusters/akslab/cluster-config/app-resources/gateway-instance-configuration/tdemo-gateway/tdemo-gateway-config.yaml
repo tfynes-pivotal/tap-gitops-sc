@@ -12,9 +12,9 @@ spec:
     description: Sample basic SCG + TAP Demos
     version: 0.0.1
     groupID: "tanzu-demo"
-    #cors:
-    #  allowedOrigins:
-    #  - "https://api-portal.akslab1a.tap.fynesy.com"
+    cors:
+      allowedOrigins:
+      - "https://api-portal.akslab1a.tap.fynesy.com"
 
   serviceAccount:
     name: tdemo-gateway-svc-acc
