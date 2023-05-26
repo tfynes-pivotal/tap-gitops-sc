@@ -12,6 +12,9 @@ spec:
   - name: annotations
     value:
       autoscaling.knative.dev/minScale: "1"
+  env:
+  - name: management.endpoint.health.probes.add-additional-paths
+    value: false
   build:
     env:
     - name: BP_JVM_VERSION
