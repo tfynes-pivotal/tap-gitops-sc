@@ -15,4 +15,4 @@ spec:
     groupId: PetClinic
     cors:
       allowedOrigins:
-      - "https://api-portal.akslab1a.tap.fynesy.com"
+      - "https://api-portal.akslab1b.tap.fynesy.com"
