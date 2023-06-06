@@ -5,6 +5,8 @@ metadata:
   namespace: default
 spec:
   count: 1
+  host: petclinic.ekslab1.tap.fynesy.com
+
   #env:
   #- name: LOGGING_LEVEL_ORG_SPRINGFRAMEWORK
   #  value: TRACE
