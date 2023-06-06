@@ -13,6 +13,10 @@ spec:
         url: https://github.com/tfynes-pivotal/tap-gitops-sc
         subPath: clusters/akslab/cluster-config/dependent-resources
   template:
+    - sops:
+        age:
+          privateKeysSecretRef:
+            name: sync-age-identity
     - ytt: {}
   deploy:
     - kapp:
