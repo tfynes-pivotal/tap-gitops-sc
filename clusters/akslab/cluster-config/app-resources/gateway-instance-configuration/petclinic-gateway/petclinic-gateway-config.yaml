@@ -6,15 +6,12 @@ metadata:
 spec:
   count: 1
   host: petclinic.ekslab1.tap.fynesy.com
-
-  #env:
-  #- name: LOGGING_LEVEL_ORG_SPRINGFRAMEWORK
-  #  value: TRACE
   api:
+    serverUrl: petclinic.ekslab1.tap.fynesy.com
     title: Tanzu PetClinic APIs
     description: PetClinic with SCG Demo
     version: 0.0.1
-    groupId: PetClinic
+    groupId: "petclinic"
     cors:
       allowedOrigins:
       - "https://api-portal.ekslab1.tap.fynesy.com"
