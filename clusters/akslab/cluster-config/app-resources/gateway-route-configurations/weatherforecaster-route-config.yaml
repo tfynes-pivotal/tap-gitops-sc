@@ -11,5 +11,5 @@ spec:
       - Path=/weatherforecaster
       - Method=GET
     filters:
-      - StripPrefix=1
+      - StripPrefix=0
       - PrefixPath=/
