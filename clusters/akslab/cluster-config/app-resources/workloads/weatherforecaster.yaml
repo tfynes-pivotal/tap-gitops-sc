@@ -13,5 +13,6 @@ spec:
       autoscaling.knative.dev/minScale: "1"
   source:
     git:
-      ref: https://github.com/tfynes-pivotal/weatherforecaster
+      ref: 
         branch: main
+      url: https://github.com/tfynes-pivotal/weatherforecaster
