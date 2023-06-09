@@ -12,5 +12,5 @@ kubectl -n tap-install create secret docker-registry --dry-run=client user-regis
 
 
 sops --encrypt ./user-registry-dockerconfig.yaml > user-registry-dockerconfig.sops.yaml
-cp ./user-registry-dockerconfig.sops.yaml [tap-gitops local repo full path]/clusters/akslab/cluster-config/config/tap-install/
+cp ./user-registry-dockerconfig.sops.yaml [tap-gitops local repo full path]/clusters/taplab/cluster-config/config/tap-install/
 ~

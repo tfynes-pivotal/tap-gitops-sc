@@ -11,7 +11,7 @@ spec:
     - git:
         ref: origin/main
         url: https://github.com/tfynes-pivotal/tap-gitops-sc
-        subPath: clusters/akslab/cluster-config/app-resources
+        subPath: clusters/taplab/cluster-config/app-resources
   template:
     - ytt: {}
   deploy:
