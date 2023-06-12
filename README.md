@@ -6,7 +6,7 @@ It uses the carvel toolchain (tanzu cluster essentials) to configuration continu
 
 The same configuration is used to monitor for application workload and service deployments allowing for the state of the target cluster to be driven off this repo for application as well as platform level configuration.
 
-##Additional Implementation Details
+## Additional Implementation Details
 * Uses CertManager HTTP Solver to establish TLS based ingress platform-wide.
 * Includes Tanzu Postgres Operator, allowing for declarative in-cluster postgres database provisioning for apps.
 * Includes Spring Cloud Gateway Operator, allowing for declarative in-cluster micro-gateway
@@ -17,17 +17,17 @@ The same configuration is used to monitor for application workload and service d
 * Hashicorp Vault explicitly helm deployed to provide an in-cluster backend for API-Key storage
 
 
-##Pre-requisites
+## Pre-requisites
 * Compliant kubernetes cluster (GKE, AKE, EKS, TKG....)
 * Image Registry (e.g. Dockerhub)
 * Source Repository (e.g. Github)
 * Wildcard DNS Domain (e.g. dyn.com)
 
-##Notes
+## Notes
 * Installation used SOPS-encrypted (sealed-secrets) allowing for safe use of a public gitops source repository
 
 
-##Installation HowTo
+## Installation HowTo
 
 * Secrets Encryption containing references to your 
 ..* image registry credentials (e.g. dockerhub login) 
@@ -46,7 +46,6 @@ The same configuration is used to monitor for application workload and service d
 ```kubectl -n tanzu-system-ingress get svc -w
 
 
-6. Deploy 
 
 
 
