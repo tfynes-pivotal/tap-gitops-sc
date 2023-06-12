@@ -17,7 +17,7 @@ The same configuration is used to monitor for application workload and service d
 * Hashicorp Vault explicitly helm deployed to provide an in-cluster backend for API-Key storage
 
 
-## Pre-requisites
+## Prerequisites
 * Compliant kubernetes cluster (GKE, AKE, EKS, TKG....)
 * Image Registry (e.g. Dockerhub)
 * Source Repository (e.g. Github)
@@ -34,6 +34,8 @@ The same configuration is used to monitor for application workload and service d
   * image registry credentials (e.g. dockerhub login) 
   * source repository id (e.g. github 'app' client id/secret for tap-gui auth support)
 
+### Creating Sensitive-Values Configuration Files
+  
 
 
 
