@@ -6,7 +6,7 @@ It uses the carvel toolchain (tanzu cluster essentials) to configuration continu
 
 The same configuration is used to monitor for application workload and service deployments allowing for the state of the target cluster to be driven off this repo for application as well as platform level configuration.
 
-Additional Implementation Details
+##Additional Implementation Details
 * Uses CertManager HTTP Solver to establish TLS based ingress platform-wide.
 * Includes Tanzu Postgres Operator, allowing for declarative in-cluster postgres database provisioning for apps.
 * Includes Spring Cloud Gateway Operator, allowing for declarative in-cluster micro-gateway
@@ -17,12 +17,36 @@ Additional Implementation Details
 * Hashicorp Vault explicitly helm deployed to provide an in-cluster backend for API-Key storage
 
 
-Pre-requisites
+##Pre-requisites
 * Compliant kubernetes cluster (GKE, AKE, EKS, TKG....)
 * Image Registry (e.g. Dockerhub)
 * Source Repository (e.g. Github)
-* Installation used SOPS-encrypted (sealed-secrets) allowing for safe use of a public gitops source repo.
+* Wildcard DNS Domain (e.g. dyn.com)
 
+##Notes
+* Installation used SOPS-encrypted (sealed-secrets) allowing for safe use of a public gitops source repository
+
+
+##Installation HowTo
+
+* Secrets Encryption containing references to your 
+..* image registry credentials (e.g. dockerhub login) 
+..* source repository id (e.g. github 'app' client id/secret for tap-gui auth support)
+
+* Update all configuration files to refer to your wildcard DNS domain (global search/replace)
+
+* Create target K8s Cluster
+
+* Deploy Tanzu Cluster Essentials
+
+* Deploy TAP 'sync' kApp
+
+* Update wildcard DNS entry for global ingress to cluster (based on public IP provided by cluster to Contour)
+..* Monitor for IP/CNAME as follows
+```kubectl -n tanzu-system-ingress get svc -w
+
+
+6. Deploy 
 
 
 
