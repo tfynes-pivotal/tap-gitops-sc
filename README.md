@@ -37,7 +37,6 @@ The same configuration is used to monitor for application workload and service d
 
 
 
-
 * Update all configuration files to refer to your wildcard DNS domain (global search/replace)
 
 * Create target K8s Cluster

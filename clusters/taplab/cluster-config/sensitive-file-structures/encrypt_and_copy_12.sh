@@ -1,6 +1,6 @@
 export SOPS_AGE_RECIPIENTS=$(cat key.txt | grep "# public key: " | sed 's/# public key: //')
-sops --encrypt tap-sensitive-values-12.yaml > tap-sensitive-values-12.sops.yaml
-cp ./tap-sensitive-values-12.sops.yaml /Users/thomasfynes/PIVOTAL/TAP/tap-powertools/tap-installer-scripts/tap-gitops-sc/clusters/taplab/cluster-config/values/
+sops --encrypt tap-sensitive-values.yaml > tap-sensitive-values.sops.yaml
+cp ./tap-sensitive-values.sops.yaml /Users/thomasfynes/PIVOTAL/TAP/tap-powertools/tap-installer-scripts/tap-gitops-sc/clusters/taplab/cluster-config/values/
 
 sops --encrypt ./user-registry-dockerconfig.yaml > user-registry-dockerconfig.sops.yaml
 cp ./user-registry-dockerconfig.sops.yaml /Users/thomasfynes/PIVOTAL/TAP/tap-powertools/tap-installer-scripts/tap-gitops-sc/clusters/taplab/cluster-config/config/tap-install/
