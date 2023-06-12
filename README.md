@@ -42,7 +42,6 @@ The same configuration is used to monitor for application workload and service d
 * Deploy TAP 'sync' kApp
 
 * Update wildcard DNS entry for global ingress to cluster (based on public IP provided by cluster to Contour)
-
 ..* Monitor for IP/CNAME as follows
 
 ```
