@@ -45,8 +45,9 @@ The same configuration is used to monitor for application workload and service d
 
 ..* Monitor for IP/CNAME as follows
 
-```kubectl -n tanzu-system-ingress get svc -w
-
+```
+kubectl -n tanzu-system-ingress get svc -w
+```
 
 
 
