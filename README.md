@@ -22,6 +22,7 @@ The same configuration is used to monitor for application workload and service d
 * Image Registry (e.g. Dockerhub)
 * Source Repository (e.g. Github)
 * Wildcard DNS Domain (e.g. dyn.com)
+* TanzuNet Credentials
 
 ## Notes
 * Installation used SOPS-encrypted (sealed-secrets) allowing for safe use of a public gitops source repository
@@ -29,9 +30,13 @@ The same configuration is used to monitor for application workload and service d
 
 ## Installation HowTo
 
-* Secrets Encryption containing references to your 
+* Secrets Encryption containing references to; [TAP Docs Reference](https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.5/tap/install-gitops-sops.html)
   * image registry credentials (e.g. dockerhub login) 
   * source repository id (e.g. github 'app' client id/secret for tap-gui auth support)
+
+
+
+
 
 * Update all configuration files to refer to your wildcard DNS domain (global search/replace)
 
@@ -47,9 +52,6 @@ The same configuration is used to monitor for application workload and service d
 ```
 kubectl -n tanzu-system-ingress get svc -w
 ```
-
-
-
 
 
 
