@@ -5,13 +5,13 @@ metadata:
   namespace: default
 spec:
   count: 1
-  host: petclinic.ekslab1a.tap.fynesy.com
+  host: petclinic.akslab2a.tap.fynesy.com
   api:
-    serverUrl: petclinic.ekslab1a.tap.fynesy.com
+    serverUrl: petclinic.akslab2a.tap.fynesy.com
     title: Tanzu PetClinic APIs
     description: PetClinic with SCG Demo
     version: 0.0.1
     groupId: "petclinic"
     cors:
       allowedOrigins:
-      - "https://api-portal.ekslab1a.tap.fynesy.com"
+      - "https://api-portal.akslab2a.tap.fynesy.com"
