@@ -32,15 +32,10 @@ The same configuration is used to monitor for application workload and service d
 * Secrets Encryption containing references to your 
 ..* image registry credentials (e.g. dockerhub login) 
 ..* source repository id (e.g. github 'app' client id/secret for tap-gui auth support)
-
 * Update all configuration files to refer to your wildcard DNS domain (global search/replace)
-
 * Create target K8s Cluster
-
 * Deploy Tanzu Cluster Essentials
-
 * Deploy TAP 'sync' kApp
-
 * Update wildcard DNS entry for global ingress to cluster (based on public IP provided by cluster to Contour)
 ..* Monitor for IP/CNAME as follows
 
