@@ -5,16 +5,16 @@ metadata:
   namespace: default
 spec:
   count: 1
-  host: tdemo.ekslab1aa.tap.fynesy.com
+  host: tdemo.ekslab1a.tap.fynesy.com
   api:
-    serverUrl: https://tdemo.ekslab1aa.tap.fynesy.com
+    serverUrl: https://tdemo.ekslab1a.tap.fynesy.com
     title: Tanzu Demo APIs
     description: Sample basic SCG + TAP Demos
     version: 0.0.1
     groupID: "tanzu-demo"
     cors:
       allowedOrigins:
-      - "https://api-portal.ekslab1aa.tap.fynesy.com"
+      - "https://api-portal.ekslab1a.tap.fynesy.com"
       allowedMethods:
       - "GET"
       allowedHeaders:
