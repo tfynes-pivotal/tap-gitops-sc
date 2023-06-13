@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   dnsNames:
-  - tdemo.akslab2a.tap.fynesy.com
+  - tdemo.ekslab1aa.tap.fynesy.com
   secretName: tdemo-gateway-tls-cert
   issuerRef:
     name: letsencrypt-production

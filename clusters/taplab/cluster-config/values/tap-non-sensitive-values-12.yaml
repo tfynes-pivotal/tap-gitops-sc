@@ -2,7 +2,7 @@
 tap_install:
   values: 
         shared:
-          ingress_domain: "akslab2a.tap.fynesy.com"
+          ingress_domain: "ekslab1aa.tap.fynesy.com"
           ingress_issuer: "letsencrypt-production"
 
 

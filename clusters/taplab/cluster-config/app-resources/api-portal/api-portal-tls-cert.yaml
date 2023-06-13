@@ -5,7 +5,7 @@ metadata:
   namespace: api-portal
 spec:
   dnsNames:
-  - api-portal.akslab2a.tap.fynesy.com
+  - api-portal.ekslab1aa.tap.fynesy.com
   secretName: api-portal-tls-cert
   issuerRef:
     name: letsencrypt-production
