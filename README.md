@@ -13,11 +13,11 @@ It can be deployed to any kubernetes cluster on any cloud / infrastructure
   * Fork this repo
   * Download required cli tools (age, sops, ytt, git, kubectl, k9s)
   * Prepare sensitive configuration for TAP
-  ** Create encryption key (/clusters/taplab/sensitive-file-structures/sensitive-file-creators/1_create_age_secret.sh)
-  ** Create sops encrypted TAP configuration
+    * Create encryption key (/clusters/taplab/sensitive-file-structures/sensitive-file-creators/1_create_age_secret.sh)
+    * Create sops encrypted TAP configuration
   * Prepare non-sensitive configuration for TAP
-  ** Set DNS wildcard domain for cluster
-  ** Update any internal references in this repo to point to your fork
+    * Set DNS wildcard domain for cluster
+    * Update any internal references in this repo to point to your fork
 
 ## Additional Implementation Details
 * It uses the carvel toolchain ([tanzu cluster essentials](https://network.pivotal.io/products/tanzu-cluster-essentials)) to configure continuous reconciliation from this archive after initial deployment and configuration.
