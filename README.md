@@ -1,4 +1,5 @@
 # Tanzu GitOps Demo Creator
+![image](https://github.com/tfynes-pivotal/tap-gitops-sc/assets/6810491/cb6e38ad-57a7-4b4a-badb-03ed9d62818a)
 
 
 This archive combines an opinionated TAP cluster installation and configuration along with additional service operators and demonstration workloads.
