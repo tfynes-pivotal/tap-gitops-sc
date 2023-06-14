@@ -1,10 +1,11 @@
-# Tanzu GitOps Demonstration Cluster
+# Tanzu GitOps Demo Creator
+
 
 This archive combines an opinionated TAP cluster installation and configuration along with additional service operators and demonstration workloads.
 
 It uses the carvel toolchain ([tanzu cluster essentials](https://network.pivotal.io/products/tanzu-cluster-essentials)) to configure continuous reconciliation from this archive after initial deployment and configuration.
 
-The same configuration is used to monitor for application workload and service deployments allowing for the state of the target cluster to be driven off this repo for application as well as platform level configuration.
+The same configuration is used to monitor for application workload and service deployments allowing for the state of the target cluster to be driven off this repo for application deployment, lifecycle-management, upgrade, etc... as well as platform level configuration.
 
 ## Additional Implementation Details
 * Uses CertManager HTTP Solver to establish TLS based ingress platform-wide.
@@ -46,9 +47,6 @@ The same configuration is used to monitor for application workload and service d
 
 
 
-* Secrets Encryption containing references to; [TAP Docs Reference](https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.5/tap/install-gitops-sops.html)
-  * image registry credentials (e.g. dockerhub login) 
-  * source repository id (e.g. github 'app' client id/secret for tap-gui auth support)
 
 ### Creating Sensitive-Values Configuration Files
   
@@ -79,3 +77,5 @@ kubectl -n tanzu-system-ingress get svc -w
 
 
 For detailed documentation, refer to [VMware Tanzu Application Platform Product Documentation](https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.5/tap/install-gitops-intro.html).
+
+Secrets Encryption containing references to; [TAP Docs Reference](https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.5/tap/install-gitops-sops.html)
