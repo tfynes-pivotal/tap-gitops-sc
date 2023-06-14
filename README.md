@@ -27,9 +27,10 @@ The same configuration is used to monitor for application workload and service d
 
   * CLI Tooling
     * kubectl
-    * [highly recommended] k9s
-    * age cli
-    * sops cli
+    * k9s (optional but recommended)
+    * git cli
+    * [age cli](https://github.com/FiloSottile/age#installation)
+    * [sops cli] (https://github.com/mozilla/sops/releases)
     * tanzu cli
 
 ## Notes
