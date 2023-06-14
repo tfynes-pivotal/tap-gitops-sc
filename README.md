@@ -33,11 +33,14 @@ The same configuration is used to monitor for application workload and service d
     * [sops cli](https://github.com/mozilla/sops/releases)
     * tanzu cli
 
-## Notes
-* Installation used SOPS-encrypted (sealed-secrets) allowing for safe use of a public gitops source repository
 
 
 ## Installation HowTo
+
+1. Initial Setup
+  1. Secrets Encryption
+    1. 
+
 
 * Secrets Encryption containing references to; [TAP Docs Reference](https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.5/tap/install-gitops-sops.html)
   * image registry credentials (e.g. dockerhub login) 
@@ -63,6 +66,8 @@ The same configuration is used to monitor for application workload and service d
 kubectl -n tanzu-system-ingress get svc -w
 ```
 
+## Notes
+* Installation used SOPS-encrypted (sealed-secrets) allowing for safe use of a public gitops source repository
 
 
 
