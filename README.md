@@ -1,7 +1,7 @@
 # Tanzu App Platform - GitOps Demo Creator
 ![image](https://github.com/tfynes-pivotal/tap-gitops-sc/assets/6810491/cb6e38ad-57a7-4b4a-badb-03ed9d62818a)
 
-This archive combines an opinionated TAP cluster installation and configuration along with additional service operators and demonstration workloads.
+This archive automates the deployment & configuration of an opinionated TAP cluster along with additional service operators and demonstration workloads.
 
 Once deployed it will automatically reconcile any declared changes in the gitOps repo (platform configuration, application deployments, services, gateways, etc..)
 
