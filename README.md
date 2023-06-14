@@ -38,8 +38,11 @@ The same configuration is used to monitor for application workload and service d
 ## Installation HowTo
 
 1. Initial Setup
-  1. Secrets Encryption
-    1. 
+  1. Secrets Encryption (cluster-config/sensitive-file-structures/sensitive-file-creators)
+    1. Create secrets encryption key "1_create_age_secret.sh"
+    2. Set your dockerhub & github account details into enviroment variables
+    3. Populate and encrypt tap-sensitive-values.yaml "2_populate_and_encrypt_tap_sensitive_values.sh"
+
 
 
 * Secrets Encryption containing references to; [TAP Docs Reference](https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.5/tap/install-gitops-sops.html)

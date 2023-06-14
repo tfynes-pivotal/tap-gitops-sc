@@ -1,0 +1,30 @@
+#@ load("@ytt:data", "data")
+#@ load("@ytt:base64", "base64")
+
+---
+tap_install:
+    sensitive_values:
+        shared:
+            image_registry:
+                project_path: #@ data.values.repository_path
+                username: #@ data.values.repository_username
+                password: #@ data.values.repository_password
+        buildservice:
+            kp_default_repository: #@ data.values.repository_path
+            kp_default_repository_username: #@ data.values.repository_username
+            kp_default_repository_password: #@ data.values.repository_password
+        learningcenter:
+            imageRegistry: 
+              host: "index.docker.io/v1"
+              username: #@ data.values.repository_username
+              password: #@ data.values.repository_username
+
+        tap_gui:
+          app_config:
+            auth:
+              providers:
+                github:
+                  development:
+                    clientId: #@ data.values.github_id
+                    clientSecret: #@ data.values.github_secret
+
