@@ -40,9 +40,9 @@ The same configuration is used to monitor for application workload and service d
 
 1. Initial Setup
   1. Secrets Encryption (cluster-config/sensitive-file-structures/sensitive-file-creators)
-    * Create secrets encryption key "1_create_age_secret.sh"
-    * Set your dockerhub & github account details into enviroment variables
-    * Populate and encrypt tap-sensitive-values.yaml "2_populate_and_encrypt_tap_sensitive_values.sh"
+  * Create secrets encryption key "1_create_age_secret.sh"
+  * Set your dockerhub & github account details into enviroment variables
+  * Populate and encrypt tap-sensitive-values.yaml "2_populate_and_encrypt_tap_sensitive_values.sh"
 
 
 
