@@ -23,6 +23,14 @@ The same configuration is used to monitor for application workload and service d
 * Source Repository (e.g. Github)
 * Wildcard DNS Domain (e.g. dyn.com)
 * TanzuNet Credentials
+* [optional] OIDC provider with account (e.g. okta developer account)
+
+  * CLI Tooling
+    * kubectl
+    * [highly recommended] k9s
+    * age cli
+    * sops cli
+    * tanzu cli
 
 ## Notes
 * Installation used SOPS-encrypted (sealed-secrets) allowing for safe use of a public gitops source repository
