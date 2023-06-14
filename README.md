@@ -1,14 +1,27 @@
-# Tanzu GitOps Demo Creator
+# Tanzu App Platform - GitOps Demo Creator
 ![image](https://github.com/tfynes-pivotal/tap-gitops-sc/assets/6810491/cb6e38ad-57a7-4b4a-badb-03ed9d62818a)
-
 
 This archive combines an opinionated TAP cluster installation and configuration along with additional service operators and demonstration workloads.
 
-It uses the carvel toolchain ([tanzu cluster essentials](https://network.pivotal.io/products/tanzu-cluster-essentials)) to configure continuous reconciliation from this archive after initial deployment and configuration.
+Once deployed it will automatically reconcile any declared changes in the gitOps repo (platform configuration, application deployments, services, gateways, etc..)
 
-The same configuration is used to monitor for application workload and service deployments allowing for the state of the target cluster to be driven off this repo for application deployment, lifecycle-management, upgrade, etc... as well as platform level configuration.
+It can be deployed to any kubernetes cluster on any cloud / infrastructure
+
+## QUICK START / SETUP
+
+### Installation Phases
+  * Fork this repo
+  * Download required cli tools (age, sops, ytt, git, kubectl, k9s)
+  * Prepare sensitive configuration for TAP
+  ** Create encryption key (/clusters/taplab/sensitive-file-structures/sensitive-file-creators/1_create_age_secret.sh)
+  ** Create sops encrypted TAP configuration
+  * Prepare non-sensitive configuration for TAP
+  ** Set DNS wildcard domain for cluster
+  ** Update any internal references in this repo to point to your fork
 
 ## Additional Implementation Details
+* It uses the carvel toolchain ([tanzu cluster essentials](https://network.pivotal.io/products/tanzu-cluster-essentials)) to configure continuous reconciliation from this archive after initial deployment and configuration.
+* The same configuration is used to monitor for application workload and service deployments allowing for the state of the target cluster to be driven off this repo for application deployment, lifecycle-management, upgrade, etc... as well as platform level configuration.
 * Uses CertManager HTTP Solver to establish TLS based ingress platform-wide.
 * Includes Tanzu Postgres Operator, allowing for declarative in-cluster postgres database provisioning for apps.
 * Includes Spring Cloud Gateway Operator, allowing for declarative in-cluster micro-gateway
