@@ -3,7 +3,9 @@
 
 This archive automates the deployment & configuration of an opinionated TAP cluster along with additional service operators and demonstration workloads.
 
-Once deployed it will automatically reconcile any declared changes in the gitOps repo (platform configuration, application deployments, services, gateways, etc..)
+Once deployed it will automatically reconcile any declared changes made to (your fork of this) gitOps repo.
+
+
 
 It can be deployed to any kubernetes cluster on any cloud / infrastructure
 
@@ -11,6 +13,7 @@ It can be deployed to any kubernetes cluster on any cloud / infrastructure
 
 ### Installation Phases
   * Fork this repo
+    * Update (search&replace any internal references to original repo location) (details below)
   * Download required cli tools (age, sops, ytt, git, kubectl, k9s)
   * Prepare sensitive configuration for TAP
     * Create encryption key (/clusters/taplab/sensitive-file-structures/sensitive-file-creators/1_create_age_secret.sh)
