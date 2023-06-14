@@ -2,7 +2,7 @@
 
 This archive combines an opinionated TAP cluster installation and configuration along with additional service operators and demonstration workloads.
 
-It uses the carvel toolchain (tanzu cluster essentials) to configuration continuous reconciliation from this archive after initial deployment and configuration.
+It uses the carvel toolchain ([tanzu cluster essentials](https://network.pivotal.io/products/tanzu-cluster-essentials)) to configure continuous reconciliation from this archive after initial deployment and configuration.
 
 The same configuration is used to monitor for application workload and service deployments allowing for the state of the target cluster to be driven off this repo for application as well as platform level configuration.
 
@@ -30,7 +30,7 @@ The same configuration is used to monitor for application workload and service d
     * k9s (optional but recommended)
     * git cli
     * [age cli](https://github.com/FiloSottile/age#installation)
-    * [sops cli] (https://github.com/mozilla/sops/releases)
+    * [sops cli](https://github.com/mozilla/sops/releases)
     * tanzu cli
 
 ## Notes
