@@ -1,2 +1,4 @@
 clusters/.DS_Store
 clusters/taplab/cluster-config/not-deployed/api-security-guide/vault install scripts/vault.out
+.DS_Store
+.gitignore
