@@ -63,7 +63,11 @@ It can be deployed to any kubernetes cluster on any cloud / infrastructure
   * Set your dockerhub & github account details into enviroment variables
   * Populate and encrypt tap-sensitive-values.yaml "2_populate_and_encrypt_tap_sensitive_values.sh"
 
+cluster-config/sensitive-file-structures/sensitive-file-creators contains scripts to create tap-sensitive-values.sops.yaml from a template, taking secrets from env vars.
 
+sensitive-file-structures/create_user-registry-dockerconfig-secret.sh creates sops encrypted user-registry-dockerconfig secret - needs to be copied over existing one in cluster-config/config
+
+- need to remove/replace existing sops.yaml files as they use my age key and thus won't work in your cluster
 
 
 ### Creating Sensitive-Values Configuration Files
@@ -86,7 +90,9 @@ It can be deployed to any kubernetes cluster on any cloud / infrastructure
 kubectl -n tanzu-system-ingress get svc -w
 ```
 
+
 ## Notes
+
 * Installation used SOPS-encrypted (sealed-secrets) allowing for safe use of a public gitops source repository
 
 
@@ -97,6 +103,13 @@ kubectl -n tanzu-system-ingress get svc -w
 For detailed documentation, refer to [VMware Tanzu Application Platform Product Documentation](https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.5/tap/install-gitops-intro.html).
 
 Secrets Encryption containing references to; [TAP Docs Reference](https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.5/tap/install-gitops-sops.html)
+
+## Problems being worked on
+* looking for dockerhub alternatives as rate-limits could bite and hurt your install (e.g bad-creds auth attempts)
+* lots of copies of dockerhub creds stored in tap-sensitive-values and user-registry-dockerconfig secret 
+
+* lots of 'self-references' in the repo, so global search and replace for the repo FQDN or subPaths as you modify them via your clone/fork
+
 
 
 ## My akslab / ekslab / gkelab create scripts (from my .bashrc)
