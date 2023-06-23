@@ -182,6 +182,10 @@ eksctl create addon --name aws-ebs-csi-driver --cluster ${EKS_CLUSTER_NAME} --se
 create-gkelab-cluster()
 ```
 function create-gkelab-cluster() {
+  export GKE_CLUSTER_NAME=gkelab
+  export GKE_REGION=us-east1
+  export GKE_CLUSTER_ZONE="$GKE_REGION-d"
+  export USE_GKE_GCLOUD_AUTH_PLUGIN=True
   export GKE_CLUSTER_VERSION=$(gcloud container get-server-config --format="yaml(defaultClusterVersion)" --region $GKE_REGION | awk '/defaultClusterVersion:/ {print $2}')
   gcloud container clusters create $GKE_CLUSTER_NAME --region $GKE_REGION --cluster-version $GKE_CLUSTER_VERSION --machine-type "e2-standard-8" --num-nodes "3" --node-locations us-east1-c,us-east1-d
   gcloud container clusters get-credentials $GKE_CLUSTER_NAME --region $GKE_REGION
