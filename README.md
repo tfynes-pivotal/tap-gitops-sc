@@ -97,3 +97,94 @@ kubectl -n tanzu-system-ingress get svc -w
 For detailed documentation, refer to [VMware Tanzu Application Platform Product Documentation](https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.5/tap/install-gitops-intro.html).
 
 Secrets Encryption containing references to; [TAP Docs Reference](https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.5/tap/install-gitops-sops.html)
+
+
+## My akslab / ekslab / gkelab create scripts (from my .bashrc)
+
+
+create-akslab-cluster()
+
+```
+function create-akslab-cluster() {
+  export AKS_CLUSTER_NAME="akslab"
+  az login
+  az group create --location $AKS_REGION --name $1
+  az extension add --name aks-preview
+  az feature register --name PodSecurityPolicyPreview --namespace Microsoft.ContainerService
+  az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/PodSecurityPolicyPreview')].{Name:name,State:properties.state}"
+  az provider register --namespace Microsoft.ContainerService
+  az aks create --resource-group ${AKS_RESOURCE_GROUP} --name ${AKS_CLUSTER_NAME} --enable-oidc-issuer  --node-count 4 --enable-addons monitoring --node-vm-size Standard_DS3_v2 --node-osdisk-size 150  --kubernetes-version ${AKS_CLUSTER_VERSION}
+  az aks get-credentials --resource-group ${AKS_RESOURCE_GROUP} --name ${AKS_CLUSTER_NAME}
+  kubectl create clusterrolebinding tap-psp-rolebinding --group=system:authenticated --clusterrole=psp:privileged
+}
+```
+
+create-ekslab-cluster() (yeah messy.. needs cleanup.. but works for me...) 
+```
+create-ekslab-cluster() {
+  export EKS_CLUSTER_REGION=us-east-2
+  export EKS_CLUSTER_NAME=ekslab
+# use this line first time - to create durable cluster service role we can reuse when recreating our ekslab cluster
+# export EKS_CLUSTER_SERVICE_ROLE=$(aws iam create-role --role-name "${EKS_CLUSTER_NAME}-eks-role" --assume-role-policy-document='{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Principal":{"Service":"eks.amazonaws.com"},"Action": "sts:AssumeRole"}]}' --output text --query 'Role.Arn')
+
+  export EKS_CLUSTER_SERVICE_ROLE=$(aws iam list-roles | grep ekslab | grep -m 1 "Arn" | awk -F'"' {'print $4'})
+  echo EKS_CLUSTER_SERVICE_ROLE=$EKS_CLUSTER_SERVICE_ROLE
+  aws iam attach-role-policy --role-name "${EKS_CLUSTER_NAME}-eks-role" --policy-arn arn:aws:iam::aws:policy/AmazonEKSServicePolicy
+  aws iam attach-role-policy --role-name "${EKS_CLUSTER_NAME}-eks-role" --policy-arn arn:aws:iam::aws:policy/AmazonEKSClusterPolicy
+
+# use this line first time - to create durable worker service role we can reuse when recreating our ekslab cluster
+# export EKS_WORKER_SERVICE_ROLE=$(aws iam create-role --role-name "${CLUSTER_NAME}-eks-role" --assume-role-policy-document='{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Principal":{"Service":"eks.amazonaws.com"},"Action": "sts:AssumeRole"}]}' --output text --query 'Role.Arn')
+
+  export  EKS_WORKER_SERVICE_ROLE=$(aws iam list-roles | grep ekslab | grep worker | grep Arn | awk -F'"' {'print $4'})
+  echo EKS_WORKER_SERVICE_ROLE=$EKS_WORKER_SERVICE_ROLE
+  aws iam attach-role-policy --role-name "${EKS_CLUSTER_NAME}-eks-worker-role" --policy-arn arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy
+  aws iam attach-role-policy --role-name "${EKS_CLUSTER_NAME}-eks-worker-role" --policy-arn arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy
+  aws iam attach-role-policy --role-name "${EKS_CLUSTER_NAME}-eks-worker-role" --policy-arn arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly
+
+
+# use this line first time - to create durable vpc
+# export EKS_STACK_ID=$(aws cloudformation create-stack --stack-name ${EKS_CLUSTER_NAME} --template-url https://amazon-eks.s3.us-west-2.amazonaws.com/cloudformation/2020-10-29/amazon-eks-vpc-private-subnets.yaml --output text --query 'StackId')
+ 
+  export EKS_STACK_ID=$(aws cloudformation list-stacks --output json | jq -r ".StackSummaries[] | select (.StackName == \"${EKS_CLUSTER_NAME}\").StackId")
+  echo EKS_STACK_ID=$EKS_STACK_ID
+  export EKS_SECURITY_GROUP=$(aws cloudformation describe-stacks --stack-name ${EKS_CLUSTER_NAME} --query "Stacks[0].Outputs[?OutputKey=='SecurityGroups'].OutputValue" --output text)
+  echo EKS_SECURITY_GROUP=$EKS_SECURITY_GROUP
+  export EKS_SUBNET_IDS=$(aws cloudformation describe-stacks --stack-name ${EKS_CLUSTER_NAME} --query "Stacks[0].Outputs[?OutputKey=='SubnetIds'].OutputValue" --output text)
+  echo EKS_SUBNET_IDS=$EKS_SUBNET_IDS
+
+# Create EKS cluster
+aws eks create-cluster --name ${EKS_CLUSTER_NAME} --kubernetes-version 1.25 --role-arn "${EKS_CLUSTER_SERVICE_ROLE}" --resources-vpc-config subnetIds="${EKS_SUBNET_IDS}",securityGroupIds="${EKS_SECURITY_GROUP}"
+aws eks wait cluster-active --name ${EKS_CLUSTER_NAME}
+
+
+# Create EKS worker nodes
+aws eks create-nodegroup --cluster-name ${EKS_CLUSTER_NAME} --kubernetes-version 1.25 --nodegroup-name "${EKS_CLUSTER_NAME}-node-group" --disk-size 100 --scaling-config minSize=3,maxSize=3,desiredSize=3 --subnets $(echo $EKS_SUBNET_IDS | sed 's/,/ /g') --instance-types t3a.2xlarge --node-role ${EKS_WORKER_SERVICE_ROLE}
+aws eks wait nodegroup-active --cluster-name ${EKS_CLUSTER_NAME} --nodegroup-name ${EKS_CLUSTER_NAME}-node-group
+
+aws eks update-kubeconfig --name ${EKS_CLUSTER_NAME}
+
+# FIXES FOR PV'S TO WORK
+sleep 10
+
+#brew tap weaveworks/tap
+#brew install weaveworks/tap/eksctl
+eksctl utils associate-iam-oidc-provider  --region=${EKS_CLUSTER_REGION} --cluster=${EKS_CLUSTER_NAME} --approve
+eksctl delete iamserviceaccount --name ebs-csi-controller-sa --namespace kube-system --cluster ${EKS_CLUSTER_NAME}
+sleep 10
+eksctl create iamserviceaccount --name ebs-csi-controller-sa --namespace kube-system --cluster ${EKS_CLUSTER_NAME} --attach-policy-arn arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy  --approve   --role-name AmazonEKS_EBS_CSI_DriverRole
+eksctl delete addon --name aws-ebs-csi-driver --cluster ${EKS_CLUSTER_NAME} --region ${EKS_CLUSTER_REGION}
+sleep 10
+eksctl create addon --name aws-ebs-csi-driver --cluster ${EKS_CLUSTER_NAME} --service-account-role-arn arn:aws:iam::$(aws sts get-caller-identity --query Account --output text):role/AmazonEKS_EBS_CSI_DriverRole --force
+}
+```
+
+
+create-gkelab-cluster()
+```
+function create-gkelab-cluster() {
+  export GKE_CLUSTER_VERSION=$(gcloud container get-server-config --format="yaml(defaultClusterVersion)" --region $GKE_REGION | awk '/defaultClusterVersion:/ {print $2}')
+  gcloud container clusters create $GKE_CLUSTER_NAME --region $GKE_REGION --cluster-version $GKE_CLUSTER_VERSION --machine-type "e2-standard-8" --num-nodes "3" --node-locations us-east1-c,us-east1-d
+  gcloud container clusters get-credentials $GKE_CLUSTER_NAME --region $GKE_REGION
+  kubectl create clusterrolebinding tap-psp-rolebinding --group=system:authenticated --clusterrole=gce:podsecuritypolicy:privileged
+}
+```
