@@ -48,6 +48,7 @@ It can be deployed to any kubernetes cluster on any cloud / infrastructure
     * k9s (optional but recommended)
     * git cli
     * ytt cli
+    * yq cli
     * [age cli](https://github.com/FiloSottile/age#installation)
     * [sops cli](https://github.com/mozilla/sops/releases)
     * tanzu cli

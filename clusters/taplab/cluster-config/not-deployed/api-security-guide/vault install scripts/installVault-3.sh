@@ -12,25 +12,13 @@ write-to-vault-pod() {
   kubectl -n vault exec -it vault-0 -- /bin/sh -c "echo \"$1\" > $2"
 }
 
-# INITIALIZE VAULT TOKEN AND KEYS from vault.out FILE
-export key1=$(cat vault.out | grep "Unseal Key 1" | awk -F ' '   '{print $4}')
-export key2=$(cat vault.out | grep "Unseal Key 2" | awk -F ' '   '{print $4}')
-export key3=$(cat vault.out | grep "Unseal Key 3" | awk -F ' '   '{print $4}')
-export key4=$(cat vault.out | grep "Unseal Key 4" | awk -F ' '   '{print $4}')
-export key5=$(cat vault.out | grep "Unseal Key 5" | awk -F ' '   '{print $4}')
-export roottoken=$(cat vault.out | grep "Initial Root Token" | awk -F ' ' '{print $4}')
-
-# HACK TO REMOVE CONTROL CHARACTERS FROM KEY/TOKEN VALUES
-export roottoken=${roottoken::-5}
-export key1=${key1::-5}
-export key2=${key2::-5}
-export key3=${key3::-5}
-export key4=${key4::-5}
-export key5=${key5::-5}
-
+# INITIALIZE VAULT ROOT TOKEN from vault.out FILE
+export roottoken=$(yq e '.root_token' ./vault.out)
 
 # UNSEAL VAULT
-run-in-vault-pod "vault operator unseal $key1 && vault operator unseal $key2 && vault operator unseal $key3 && vault operator unseal $key4 && vault operator unseal $key5"
+run-in-vault-pod "vault operator unseal $(yq e '.unseal_keys_hex[0]' ./vault.out)"
+
+# ENABLE SECRETS FOR API-PORTAL
 run-in-vault-pod "vault secrets enable -path=api-portal-for-vmware-tanzu kv-v2"
 echo
 
