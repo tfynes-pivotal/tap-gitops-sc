@@ -1,0 +1,15 @@
+apiVersion: "tanzu.vmware.com/v1"
+kind: SpringCloudGatewayRouteConfig
+metadata:
+  name: wf6-gateway-route
+  namespace: default
+spec:
+  service:
+    name: wf6
+  routes:
+  - predicates:
+      - Path=/wf6
+      - Method=GET
+    filters:
+      - StripPrefix=1
+      - PrefixPath=/wf6
